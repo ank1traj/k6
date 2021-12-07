@@ -1,9 +1,9 @@
 import { sleep } from "k6";
-import getAllUsersTest from "./dev.test.js";
-import userByIdTest from "./prod.test.js";
+import dev from "./dev.test.js";
+import prod from "./prod.test.js";
 
 export default function () {
-  getAllUsersTest();
+  dev();
   sleep(1);
-  userByIdTest();
+  prod();
 }
