@@ -2,6 +2,13 @@
 
 REPORT_DATE=$(date +"%Y_%m_%dT%H_%M_%S")
 
+if [ -d "reports" ]; then
+    echo "Directory reports already exists"
+else
+    mkdir reports
+    echo "Directory reports created"
+fi
+
 echo "Enter testing type: "
 read x
 
