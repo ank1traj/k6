@@ -1,0 +1,11 @@
+{
+    "stages": [
+      { "duration": "2m", "target": 400 },
+      { "duration": "3h56m", "target": 400 },
+      { "duration": "2m", "target": 0 }
+    ],
+    "thresholds": { "http_req_duration": ["avg<100", "p(95)<200"] },
+    "noConnectionReuse": true
+  }
+  
+  

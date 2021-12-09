@@ -1,9 +1,7 @@
 import { sleep } from "k6";
-import dev from "./dev.test.js";
-import prod from "./prod.test.js";
+import stress from "./stress.test.js";
 
 export default function () {
-  dev();
+  stress();
   sleep(1);
-  prod();
 }
