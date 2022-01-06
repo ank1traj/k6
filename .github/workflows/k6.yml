@@ -19,4 +19,4 @@ jobs:
         shell: bash
 
       - name: k6 test
-        run: npm start
+        run: sh run.sh
