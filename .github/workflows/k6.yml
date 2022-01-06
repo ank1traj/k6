@@ -28,4 +28,4 @@ jobs:
           path: ./reports/
       - name: Cleanup
         if: ${{ always() }}
-        uses: ank1traj/action-cleanup@master
+        uses: rtcamp/action-cleanup@master
