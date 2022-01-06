@@ -11,5 +11,6 @@
         "type": "git"
     },
     "author": "Ankit Raj",
-    "license": "ISC"
+    "license": "ISC",
+    "type": "module"
 }
