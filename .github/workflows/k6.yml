@@ -19,3 +19,13 @@ jobs:
 
       - name: k6 test
         run: sh run.sh
+     
+      - name: Archive HTML Report 
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: html-report
+          path: ./reports/
+      - name: Cleanup
+        if: ${{ always() }}
+        uses: ank1traj/action-cleanup@master
