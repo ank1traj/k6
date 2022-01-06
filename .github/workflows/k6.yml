@@ -3,6 +3,8 @@ on:
   schedule: # 03:00 JST == 18:00 UTC
     - cron: "0 18 * * *"
   workflow_dispatch:
+  push:
+    branches: "master"
 
 jobs:
   build:
@@ -12,11 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      - name: download and extract k6 release binaries
-        run: |
-          curl -L https://github.com/loadimpact/k6/releases/download/v0.26.2/k6-v0.26.2-win64.zip -o k6.zip
-          7z.exe e k6.zip
-        shell: bash
+      - name: download k6 release binaries
+        run: brew install k6
 
       - name: k6 test
         run: sh run.sh
