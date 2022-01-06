@@ -7,11 +7,16 @@ on:
 jobs:
   build:
     runs-on: macos-latest
-
+    
     steps:
-      - name: install k6
-        run: brew install k6
-      
-      - name: run code
-        run: npm start
+      - name: Checkout
+        uses: actions/checkout@v1
 
+      - name: download and extract k6 release binaries
+        run: |
+          curl -L https://github.com/loadimpact/k6/releases/download/v0.26.2/k6-v0.26.2-win64.zip -o k6.zip
+          7z.exe e k6.zip
+        shell: bash
+
+      - name: k6 test
+        run: npm start
