@@ -1,0 +1,17 @@
+name: automate k6
+on:
+    schedule:
+      -cron: "0 */6 * * *"
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos
+
+    steps:
+      - name: install k6
+        run: brew install k6
+      
+      - name: run code
+        run: npm start
+
